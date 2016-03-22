@@ -1,0 +1,32 @@
+<%= form_for @article do |f| %>
+ 
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="w3-container">
+     <h1 class="w3-center"><%= f.label :title %></h1> 
+     <div class="w3-center"><%= f.text_field :title,size: "60" %></div> 
+  </div>
+ 
+  <div class="w3-container">
+      <h1 class="w3-center"><%= f.label :text %></h1>
+    <div class="w3-center"><%= f.text_area :text ,size: "60x12"%></div>  
+      <br>
+  </div>
+ 
+  <div class="w3-center">
+    <%= f.submit %><br>
+  </div>
+ 
+<% end %>

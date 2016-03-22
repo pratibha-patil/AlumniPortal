@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<title>articles</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<body>
+<div class="w3-container">
+        <h1 class="w3-xxxlarge w3-center">Listing Articles</h1>
+  <ul class="w3-navbar w3-black">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+      <li><button class="w3-btn w3-red"><%= link_to 'New article', new_article_path %></button></li>
+  </ul>
+</div>
+<div class="w3-container">
+    <% @articles.each do |article| %>
+    <div class="w3-container w3-card-4 w3-margin">
+     <header class="w3-container w3-grey w3-center"><h2><%= article.title %></h2></header> 
+      <p><%= article.text %></p>
+    <footer class="w3-container w3-grey">
+        <button class="w3-btn w3-black"><%= link_to 'Show', article_path(article) %></button>
+        <button class="w3-btn w3-black"><%= link_to 'Edit', edit_article_path(article) %></button>
+        <button class="w3-btn w3-black"><%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></button>
+        
+       <p><strong>Comments </strong><span class="w3-badge w3-red"><%="#{article.comments.count}"%></span></p> 
+    </footer>
+    </div>
+  <% end %>
+</div>
+
+</body>
+
+
+</html> 
+
+
