@@ -1,0 +1,16 @@
+<div class="w3-container">
+    <% @tags.each do |tag| %>
+    <div class="w3-container w3-card-4 w3-margin">
+     
+     <h1><%= tag.name%></h1>
+    <footer class="w3-container w3-grey">
+        <button class="w3-btn w3-black"><%= link_to 'Show', tag_path(tag) %></button>
+        <button class="w3-btn w3-black"><%= link_to 'Destroy', tag_path(tag),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></button>
+        
+       
+    </footer>
+    </div>
+  <% end %>
+</div>

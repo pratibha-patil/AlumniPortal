@@ -1,0 +1,7 @@
+<h1  class="w3-container w3-cyan " >Articles Tagged with <strong><%= @tag.name %><strong></h1>
+
+<ul>
+  <% @tag.articles.each do |article| %>
+   <button class="w3-btn w3-black w3-margin"> <li><%= link_to article.title, article_path(article) %></li></button>
+  <% end %>
+</ul>

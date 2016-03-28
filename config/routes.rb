@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
-  
+  resources :tags
+
 end
