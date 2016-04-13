@@ -35,6 +35,6 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
+Paperclip.options[:content_type_mappings] = { jpg: "image/jpg" } 
   #it is added for linking paperclip
 end
